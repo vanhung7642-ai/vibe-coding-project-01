@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tổng công ty Xây dựng Hùng Vương — kiến tạo hạ tầng, kết nối tương lai." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Hùng Vương Construction — hệ sinh thái xây dựng hạ tầng, cấu kiện bê tông đúc sẵn, thi công công trình, mỏ đá và vật liệu xây dựng.">
   <title>Hùng Vương Construction — Kiến tạo tương lai</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/hung-vuong-logo-full.png?v=4">
   <style>
     :root { --navy:#081a33; --navy-2:#0d2a4d; --blue:#1769d3; --cyan:#52b6ed; --ink:#11243b; --muted:#68788b; --line:#dce5ee; --cloud:#f4f8fb; --white:#fff; --shadow:0 18px 54px rgba(8,26,51,.11); }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
-    body { color:var(--ink); background:var(--white); font-family:'DM Sans',sans-serif; line-height:1.55; overflow-x:hidden; }
+    body { color:var(--ink); background:var(--white); font-family:'Be Vietnam Pro',sans-serif; line-height:1.55; overflow-x:hidden; }
     a { color:inherit; text-decoration:none; }
     img { display:block; width:100%; object-fit:cover; }
     .container { width:min(1160px, calc(100% - 48px)); margin:auto; }
@@ -26,36 +27,29 @@
     .btn:hover svg { transform:translateX(4px); }
     .btn.ghost { background:transparent; color:var(--navy); border-color:#b8c9da; }
     .btn.ghost:hover { background:var(--navy); border-color:var(--navy); color:#fff; }
-    .topbar { background:var(--navy); color:#b8c8d8; font-size:11px; padding:9px 0; }
-    .topbar .container { display:flex; justify-content:space-between; }
-    .topbar span { display:flex; align-items:center; gap:7px; }
-    .topbar svg { width:13px; color:var(--cyan); }
-    header { position:absolute; z-index:5; width:100%; top:34px; color:#fff; border-bottom:1px solid rgba(255,255,255,.2); }
-    .nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; }
+    .header-top { height:36px; min-height:36px; background:var(--navy); color:#fff; overflow:visible; font-size:10px; }
+    .header-top-inner { width:100%; height:100%; min-height:36px; display:flex; align-items:center; justify-content:space-between; padding:0 40px; box-sizing:border-box; }
+    .header-top-inner > .company-name { white-space:nowrap; }
+    .header-top-right { display:flex; align-items:center; justify-content:flex-end; gap:22px; height:100%; white-space:nowrap; flex:0 0 auto; }
+    .header-top-right .phone, .header-top-right .language-switcher { white-space:nowrap; }
+    .header-top-right .phone { color:#fff; font-size:11px; line-height:1; }
+    .header-top-right .divider, .header-top-right .language-switcher > .separator { color:rgba(255,255,255,.55); }
+    .header-top-right .language-switcher { display:flex; align-items:center; gap:10px; height:100%; white-space:nowrap; }
+    .header-top-right .language-switcher a { display:inline-flex; align-items:center; gap:4px; height:100%; color:#fff; text-decoration:none; font-size:11px; font-weight:600; line-height:1; white-space:nowrap; }
+    .header-top-right .language-switcher a:hover, .header-top-right .language-switcher a.active { color:var(--blue); }
+    header { position:static; z-index:auto; width:100%; top:auto; color:var(--navy); background:var(--white); border-bottom:1px solid #e6eaf0; box-shadow:0 5px 18px rgba(8,26,51,.045); }
+    .nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
     .brand { display:flex; align-items:center; gap:12px; font-family:'Manrope'; font-weight:800; font-size:17px; letter-spacing:.02em; }
     .brand-mark { width:39px; height:39px; display:grid; place-items:center; background:var(--blue); color:#fff; position:relative; overflow:hidden; }
     .brand-mark:after { content:''; position:absolute; width:28px; height:3px; background:var(--cyan); transform:rotate(-45deg); bottom:8px; left:6px; box-shadow:0 -7px 0 rgba(255,255,255,.9); }
-    nav { display:flex; gap:32px; font-size:12px; font-weight:600; }
-    nav a { opacity:.85; transition:.2s; }
-    nav a:hover, nav a.active { opacity:1; color:var(--cyan); }
+    header .brand { flex:0 0 auto; }
+    .header-logo { display:block; width:185px; height:auto; object-fit:contain; }
+    nav { display:flex; gap:28px; margin-left:auto; font-size:12px; font-weight:700; }
+    nav a { color:var(--navy); opacity:.78; transition:.2s; }
+    nav a:hover, nav a.active { opacity:1; color:var(--blue); }
     .nav-actions { display:flex; align-items:center; gap:17px; font-size:12px; font-weight:700; }
     .nav-actions .btn { padding:10px 15px; font-size:11px; }
-    .menu { display:none; background:none; border:0; color:#fff; }
-    .hero { min-height:680px; height:88vh; max-height:790px; display:flex; align-items:center; color:#fff; position:relative; background:linear-gradient(90deg, rgba(5,20,40,.94) 0%, rgba(6,29,55,.72) 47%, rgba(6,26,48,.17) 100%), url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1900&q=85') center/cover; }
-    .hero .container { padding-top:75px; }
-    .hero-content { max-width:650px; }
-    .hero .eyebrow { color:var(--cyan); margin-bottom:23px; }
-    .hero h1 { font-size:clamp(44px,6.2vw,78px); max-width:760px; margin-bottom:22px; }
-    .hero h1 em { color:var(--cyan); font-style:normal; }
-    .hero p { max-width:495px; color:#ced8e3; font-size:16px; margin-bottom:35px; }
-    .hero-buttons { display:flex; gap:13px; flex-wrap:wrap; }
-    .hero .btn.ghost { color:#fff; border-color:rgba(255,255,255,.5); }
-    .hero .btn.ghost:hover { background:#fff; color:var(--navy); }
-    .hero-bottom { position:absolute; bottom:0; left:0; right:0; border-top:1px solid rgba(255,255,255,.22); }
-    .hero-bottom .container { display:flex; justify-content:space-between; align-items:center; padding:17px 0; }
-    .hero-note { display:flex; gap:12px; align-items:center; font-size:11px; color:#cad6e1; }
-    .scroll { color:#fff; font-size:10px; text-transform:uppercase; letter-spacing:.18em; opacity:.7; display:flex; align-items:center; gap:10px; }
-    .scroll:after { content:''; height:38px; width:1px; background:var(--cyan); }
+    .menu { display:none; background:none; border:0; color:var(--navy); }
     .intro { padding:102px 0; }
     .intro-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:100px; align-items:center; }
     .intro-copy h2 { margin:17px 0 25px; max-width:520px; }
@@ -119,28 +113,224 @@
     footer .brand-mark { width:29px; height:29px; }
     .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
     .reveal.visible { opacity:1; transform:none; }
-    @media (max-width: 800px) { .container { width:min(100% - 36px, 600px); } .topbar .container { flex-direction:column; gap:4px; } header { top:47px; } nav,.nav-actions .btn { display:none; } .menu { display:block; } .hero { height:760px; } .hero-bottom .container { align-items:end; } .scroll { display:none; } .intro-grid,.cap-grid,.contact-grid { grid-template-columns:1fr; gap:45px; } .intro,.projects,.capability,.contact,.business { padding:75px 0; } .intro-image { max-width:520px; } .business-grid { grid-template-columns:repeat(2,1fr); } .stats-grid { grid-template-columns:repeat(2,1fr); gap:26px 0; } .stat:nth-child(3) { border:0; padding-left:0; } .projects-grid { grid-template-columns:1fr 1fr; grid-template-rows:220px 220px; } .project:first-child { grid-row:span 2; } .cap-grid { gap:30px; } }
+    @media (max-width: 800px) { .container { width:min(100% - 36px, 600px); } header { top:36px; } nav,.nav-actions .btn { display:none; } .menu { display:block; } .hero { height:760px; } .hero-bottom .container { align-items:end; } .scroll { display:none; } .intro-grid,.cap-grid,.contact-grid { grid-template-columns:1fr; gap:45px; } .intro,.projects,.capability,.contact,.business { padding:75px 0; } .intro-image { max-width:520px; } .business-grid { grid-template-columns:repeat(2,1fr); } .stats-grid { grid-template-columns:repeat(2,1fr); gap:26px 0; } .stat:nth-child(3) { border:0; padding-left:0; } .projects-grid { grid-template-columns:1fr 1fr; grid-template-rows:220px 220px; } .project:first-child { grid-row:span 2; } .cap-grid { gap:30px; } }
     @media (max-width: 500px) { .hero h1 { font-size:43px; } .hero p { font-size:14px; } .brand { font-size:14px; } .brand-mark { width:34px;height:34px; } .hero-bottom { display:none; } .section-head { display:block; } .section-head p { margin-top:17px; } .business-grid { grid-template-columns:1fr; gap:10px; } .business-card { min-height:0; padding:25px; } .card-icon { margin-bottom:20px; } .stats-grid { grid-template-columns:1fr 1fr; } .stat { padding-left:17px; } .stat strong { font-size:34px; } .projects-grid { display:block; } .project,.project:first-child { height:230px; margin-bottom:12px; } .contact-grid { gap:40px; } footer .container { display:block; } footer .container > span { display:block; margin-top:14px; } }
+
+    /* Homepage visual direction: editorial depth, restrained accents, and preserved responsive behavior. */
+    .anniversary { position:relative; padding:118px 0 124px; overflow:hidden; background:var(--white); }
+    .anniversary:before { content:''; position:absolute; width:48vw; height:48vw; max-width:620px; max-height:620px; right:-16vw; top:-22vw; border:1px solid rgba(23,105,211,.13); border-radius:50%; }
+    .anniversary:after { content:''; position:absolute; width:340px; height:2px; right:-40px; top:128px; background:linear-gradient(90deg,transparent,var(--cyan),#f58a24); transform:rotate(-32deg); transform-origin:right center; }
+    .anniversary-grid { display:grid; grid-template-columns:44% 1fr; gap:8%; align-items:center; position:relative; z-index:1; }
+    .anniversary-mark { position:relative; min-width:0; }
+    .anniversary-mark img { width:min(100%,520px); height:auto; object-fit:contain; object-position:left center; }
+    .anniversary-copy { position:relative; padding:30px 0 30px 42px; }
+    .anniversary-copy:before { content:''; position:absolute; left:0; top:0; bottom:0; width:1px; background:linear-gradient(180deg,var(--blue),#f58a24,transparent); }
+    .anniversary-copy h2 { margin:18px 0 22px; max-width:570px; font-size:clamp(34px,4.5vw,62px); }
+    .anniversary-copy p { color:var(--muted); max-width:500px; font-size:15px; }
+    .anniversary-line { display:flex; align-items:center; gap:17px; margin-top:38px; color:var(--navy); font-family:'Manrope'; font-weight:800; font-size:14px; letter-spacing:.08em; }
+    .anniversary-line i { display:block; height:1px; flex:0 1 180px; background:linear-gradient(90deg,var(--blue),#f58a24); }
+    .business { position:relative; }
+    .business-grid { grid-template-columns:1.18fr 1fr 1fr 1.18fr; gap:1px; background:var(--line); }
+    .business-card { position:relative; min-height:310px; padding:34px 28px; overflow:hidden; }
+    .business-index { display:block; color:#92a6ba; font:700 11px/1 'Manrope'; letter-spacing:.16em; margin-bottom:48px; }
+    .business-card:before { content:''; position:absolute; top:0; left:0; width:0; height:3px; background:linear-gradient(90deg,var(--blue),#f58a24); transition:width .45s ease; }
+    .business-card:hover:before { width:100%; }
+    .business-card:after { content:''; position:absolute; width:100px; height:100px; right:-34px; bottom:-34px; border:1px solid rgba(23,105,211,.15); border-radius:50%; transition:.4s ease; }
+    .business-card:hover:after { transform:scale(1.35); border-color:rgba(23,105,211,.3); }
+    .business-card h3 { max-width:210px; }
+    .business-card p { max-width:230px; }
+    .stats { position:relative; overflow:hidden; }
+    .stats:after { content:'35'; position:absolute; right:5%; bottom:-85px; color:rgba(255,255,255,.035); font:800 250px/.8 'Manrope'; letter-spacing:-.1em; pointer-events:none; }
+    .stats-grid { position:relative; z-index:1; }
+    .projects { position:relative; }
+    .projects-grid { grid-template-columns:1.27fr .73fr; grid-template-rows:290px 220px; gap:18px; }
+    .project:first-child { grid-row:span 2; }
+    .project:first-child .project-copy h3 { font-size:clamp(26px,3vw,38px); }
+    .project:first-child .project-copy { bottom:32px; left:32px; }
+    .project:not(:first-child) .project-copy { bottom:22px; left:22px; }
+    .project:not(:first-child) { transform:translateY(16px); }
+    .project:not(:first-child):hover { transform:translateY(8px); }
+    .capability { position:relative; }
+    .capability:before { content:''; position:absolute; width:260px; height:260px; left:-160px; bottom:-160px; border:1px solid rgba(23,105,211,.14); border-radius:50%; }
+    .cap-copy h2 { font-size:clamp(38px,5.3vw,74px); max-width:650px; }
+    .cap-copy h2 span { display:inline-block; }
+    .contact { padding-top:132px; padding-bottom:132px; }
+    .contact:before { content:''; position:absolute; left:0; top:0; width:34%; height:2px; background:linear-gradient(90deg,var(--cyan),#f58a24,transparent); }
+    @media (max-width:800px) { .anniversary { padding:88px 0 96px; } .anniversary-grid { grid-template-columns:1fr; gap:48px; } .anniversary-mark img { width:min(100%,460px); } .anniversary-copy { padding-left:28px; } .anniversary:after { top:116px; right:-120px; } .business-card { min-height:260px; } .business-index { margin-bottom:34px; } .projects-grid { grid-template-rows:240px 190px; } .project:not(:first-child) { transform:none; } .project:not(:first-child):hover { transform:translateY(-5px); } .contact { padding-top:104px; padding-bottom:104px; } }
+    @media (max-width:500px) { .anniversary { padding:76px 0 82px; } .anniversary-grid { gap:40px; } .anniversary-mark img { width:min(100%,340px); } .anniversary-copy { padding:24px 0 24px 22px; } .anniversary-copy h2 { margin:16px 0 20px; font-size:35px; } .anniversary-line { margin-top:28px; font-size:12px; } .anniversary-line i { flex-basis:80px; } .business-card { min-height:220px; padding:28px 25px; } .business-index { margin-bottom:27px; } .projects-grid { grid-template-rows:230px 190px; } .project:first-child .project-copy { bottom:24px; left:24px; } .project:first-child .project-copy h3 { font-size:22px; } .contact { padding-top:88px; padding-bottom:88px; } }
+
+    /* Homepage editorial banner carousel: scoped to the new banner section only. */
+    .home-banner-carousel { position:relative; height:clamp(650px,72vh,750px); overflow:hidden; color:#fff; background:var(--navy); }
+    .home-banner-track { position:relative; width:100%; height:100%; }
+    .home-banner-slide { position:absolute; inset:0; display:flex; align-items:center; opacity:0; visibility:hidden; transition:opacity .65s ease, visibility .65s ease; background-position:center; background-size:cover; }
+    .home-banner-slide:before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(5,20,40,.22),rgba(5,20,40,.12) 46%,rgba(5,20,40,.55)); }
+    .home-banner-slide.is-active { opacity:1; visibility:visible; }
+    .home-banner-slide:nth-child(1) { background-image:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1900&q=85'); }
+    .home-banner-slide:nth-child(2) { background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1900&q=85'); }
+    .home-banner-slide:nth-child(3) { background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1900&q=85'); }
+    .home-banner-content { position:relative; z-index:1; width:min(1160px,calc(100% - 48px)); margin:0 auto; display:flex; justify-content:flex-end; }
+    .home-banner-card { width:min(520px,48%); padding:42px 44px 40px; background:rgba(255,255,255,.96); color:var(--navy); clip-path:polygon(0 0,100% 0,100% 92%,92% 100%,0 100%); box-shadow:0 22px 55px rgba(5,20,40,.2); }
+    .home-banner-card .slide-index { display:block; margin-bottom:25px; color:var(--blue); font:700 12px/1 'Manrope'; letter-spacing:.14em; }
+    .home-banner-card h2 { margin-bottom:18px; font-size:clamp(30px,3.6vw,52px); }
+    .home-banner-card p { max-width:420px; margin-bottom:30px; color:var(--muted); font-size:15px; }
+    .home-banner-card .banner-link { display:inline-flex; align-items:center; gap:12px; color:var(--blue); font-size:12px; font-weight:700; }
+    .home-banner-card .banner-link:before { content:''; width:28px; height:1px; background:#f47721; }
+    .home-banner-card .banner-link svg { width:16px; transition:transform .25s ease; }
+    .home-banner-card .banner-link:hover svg { transform:translateX(4px); }
+    .home-banner-logo { width:150px!important; height:auto; object-fit:contain; margin-bottom:25px; }
+    .home-banner-controls { position:absolute; z-index:2; left:0; right:0; bottom:34px; width:min(1160px,calc(100% - 48px)); margin:0 auto; display:flex; justify-content:flex-end; align-items:center; gap:20px; }
+    .home-banner-control { width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.65); background:rgba(5,20,40,.22); color:#fff; cursor:pointer; transition:background .25s ease,border-color .25s ease; }
+    .home-banner-control:hover { background:var(--blue); border-color:var(--blue); }
+    .home-banner-control svg { width:18px; fill:none; stroke:currentColor; stroke-width:1.6; }
+    .home-banner-count { min-width:70px; color:#fff; font:700 12px/1 'Manrope'; letter-spacing:.12em; text-align:center; }
+    @media(max-width:800px) { .home-banner-carousel { height:650px; } .home-banner-content { align-items:flex-end; padding-bottom:105px; } .home-banner-card { width:min(520px,100%); padding:32px 30px 30px; } .home-banner-card h2 { font-size:36px; } .home-banner-controls { bottom:24px; width:calc(100% - 36px); } }
+    @media(max-width:500px) { .home-banner-carousel { height:620px; } .home-banner-slide:before { background:linear-gradient(180deg,rgba(5,20,40,.08),rgba(5,20,40,.58)); } .home-banner-content { width:calc(100% - 36px); padding-bottom:92px; } .home-banner-card { padding:27px 24px 25px; } .home-banner-card .slide-index { margin-bottom:17px; } .home-banner-card h2 { font-size:30px; } .home-banner-card p { margin-bottom:22px; font-size:14px; } .home-banner-logo { width:120px!important; margin-bottom:18px; } .home-banner-control { width:38px; height:38px; } .home-banner-controls { gap:12px; } }
+
+    .home-additional-section { padding:112px 0; }
+    .home-section-title { margin-bottom:42px; }
+    .home-section-title h2 { margin-top:15px; font-size:clamp(30px,4vw,48px); }
+    .home-section-title h2:after { content:''; display:block; width:58px; height:3px; margin-top:18px; background:#f47721; }
+    .home-video-section { background:var(--navy); color:#fff; }
+    .home-video-section h2 { color:#fff; }
+    .home-video-grid { display:grid; grid-template-columns:1.02fr .98fr; gap:70px; align-items:start; }
+    .home-video-frame { position:relative; aspect-ratio:16/9; background:#0d2a4d; border:1px solid rgba(255,255,255,.16); display:grid; place-items:center; overflow:hidden; }
+    .home-video-thumbnail { width:100%; height:100%; object-fit:cover; opacity:.78; }
+    .home-video-frame:after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(5,20,40,.28),rgba(5,20,40,.08)); pointer-events:none; }
+    .home-video-frame:before { content:''; position:absolute; inset:16px; border:1px solid rgba(82,182,237,.3); pointer-events:none; }
+    .home-video-placeholder { position:relative; z-index:1; width:75%; padding:24px; text-align:center; color:#c5d3e0; font-size:13px; }
+    .home-video-placeholder strong { display:block; margin-bottom:8px; color:#fff; font:700 18px 'Manrope'; }
+    .home-video-copy { padding-top:26px; color:#c5d3e0; font-size:14px; }
+    .home-video-copy p { margin-bottom:18px; }
+    .home-video-copy .quote-sign { color:var(--cyan); font-weight:700; }
+    .home-video-copy .signature { margin:26px 0; padding-left:18px; border-left:2px solid #f47721; color:#fff; font-size:13px; }
+    .home-video-copy .signature span { display:block; color:#a9bacb; font-size:11px; margin-top:3px; }
+    .home-map-panel { min-height:475px; position:relative; overflow:visible; }
+    .home-map-stage { position:relative; width:100%; max-width:520px; margin:0 auto; aspect-ratio:647 / 817; }
+    .home-map-graphic { display:block; width:100%; height:100%; object-fit:contain; }
+    .home-map-marker { position:absolute; width:16px; height:16px; padding:0; border:0; border-radius:50%; background:#f47721; box-shadow:0 0 0 4px rgba(244,119,33,.2); cursor:pointer; z-index:4; transform:translate(-50%,-50%); }
+    .home-map-marker:before,.home-map-marker:after { content:''; position:absolute; inset:-7px; border:1px solid rgba(82,182,237,.72); border-radius:50%; animation:homeMapRipple 2.8s ease-out infinite; pointer-events:none; }
+    .home-map-marker:after { animation-delay:1.4s; }
+    .home-map-marker:hover,.home-map-marker:focus { outline:2px solid #fff; outline-offset:3px; }
+    .home-map-marker:focus:after,.home-map-marker:focus:before { animation-play-state:paused; }
+    @keyframes homeMapRipple { 0% { transform:scale(.45); opacity:.8; } 75%,100% { transform:scale(2.7); opacity:0; } }
+    .home-map-marker[data-location="khanh-hoa"] { left:71.9%; top:76.1%; }
+    .home-map-marker[data-location="phuoc-tan"] { left:46.7%; top:80.5%; animation-delay:.35s; }
+    .home-map-marker[data-location="ba-ria"] { left:53.2%; top:81%; animation-delay:.7s; }
+    .home-map-marker[data-location="binh-phuoc"] { left:49.9%; top:76.7%; animation-delay:1.05s; }
+    .home-map-marker[data-location="ha-tinh"] { left:43.6%; top:34.6%; animation-delay:1.4s; }
+    .home-video-play { position:absolute; z-index:2; width:76px; height:76px; border:0; border-radius:50%; background:var(--blue); color:#fff; display:grid; place-items:center; cursor:pointer; box-shadow:0 9px 28px rgba(5,20,40,.35); }
+    .home-video-play:before,.home-video-play:after { content:''; position:absolute; inset:-12px; border:1px solid rgba(82,182,237,.8); border-radius:50%; animation:homePlayRipple 2.5s ease-out infinite; }
+    .home-video-play:after { animation-delay:1.25s; }
+    .home-video-play svg { position:relative; z-index:1; width:26px; fill:currentColor; margin-left:4px; }
+    @keyframes homePlayRipple { 0% { transform:scale(.65); opacity:.75; } 75%,100% { transform:scale(1.8); opacity:0; } }
+    .home-video-modal { position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:24px; background:rgba(0,0,0,.7); opacity:0; visibility:hidden; pointer-events:none; transition:.25s; }
+    .home-video-modal.is-open { opacity:1; visibility:visible; pointer-events:auto; }
+    .home-video-modal-dialog { position:relative; width:min(900px,100%); aspect-ratio:16/9; background:#000; box-shadow:0 25px 70px rgba(0,0,0,.45); }
+    .home-video-modal iframe { width:100%; height:100%; border:0; }
+    .home-video-modal-close { position:absolute; z-index:2; right:-42px; top:-42px; width:34px; height:34px; border:1px solid rgba(255,255,255,.7); border-radius:50%; background:var(--navy); color:#fff; font-size:24px; line-height:1; cursor:pointer; }
+    .home-stats-section { background:#fff; }
+    .home-stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+    .home-stat { padding:0 20px 24px; border-bottom:2px solid var(--blue); }
+    .home-stat-icon { width:35px; height:35px; color:var(--blue); margin-bottom:22px; }
+    .home-stat-icon svg { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.4; }
+    .home-stat strong { display:block; color:var(--navy); font:800 clamp(31px,3.4vw,48px)/1 'Manrope'; letter-spacing:-.06em; white-space:nowrap; }
+    .home-stat p { max-width:210px; margin-top:14px; color:var(--muted); font-size:13px; }
+    .home-news-section { background:var(--cloud); }
+    .home-news-layout { display:grid; grid-template-columns:1.85fr 1fr; gap:48px; }
+    .home-news-heading { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:28px; }
+    .home-news-heading h3 { color:var(--navy); font-size:22px; }
+    .home-news-heading h3:after { content:''; display:block; width:42px; height:2px; margin-top:12px; background:#f47721; }
+    .home-news-heading span { color:var(--blue); font-size:11px; font-weight:700; }
+    .home-news-featured { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+    .home-news-card { background:#fff; border:1px solid var(--line); }
+    .home-news-thumb { aspect-ratio:1.45; background:linear-gradient(135deg,#dbe8f2,#9fb8cd); display:grid; place-items:center; color:#557087; font-size:10px; text-align:center; padding:14px; }
+    .home-news-card:nth-child(1) .home-news-thumb { background-image:url('https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=700&q=80'); background-size:cover; }
+    .home-news-card:nth-child(2) .home-news-thumb { background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80'); background-size:cover; }
+    .home-news-card:nth-child(3) .home-news-thumb { background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=700&q=80'); background-size:cover; }
+    .home-news-card-body { padding:20px; }
+    .home-news-meta { color:var(--blue); font-size:10px; }
+    .home-news-card h4 { margin:9px 0 8px; color:var(--navy); font:700 17px/1.2 'Manrope'; }
+    .home-news-card p,.home-news-list p { color:var(--muted); font-size:12px; }
+    .home-news-detail { display:inline-block; margin-top:15px; color:var(--blue); font-size:10px; font-weight:700; }
+    .home-news-list { max-height:345px; overflow:auto; padding-right:8px; }
+    .home-news-list article { padding:0 0 17px; margin-bottom:17px; border-bottom:1px solid var(--line); }
+    .home-news-list h4 { margin:5px 0; color:var(--navy); font:700 15px/1.25 'Manrope'; }
+    .home-news-tabs { display:flex; gap:18px; margin-bottom:18px; border-bottom:1px solid var(--line); }
+    .home-news-tab { padding:0 0 10px; border:0; border-bottom:2px solid transparent; background:transparent; color:var(--muted); cursor:pointer; font:700 11px 'Be Vietnam Pro'; }
+    .home-news-tab.is-active { color:var(--blue); border-bottom-color:var(--blue); }
+    .home-partners-section { background:#fff; }
+    .home-partner-shell { display:grid; grid-template-columns:42px 1fr 42px; align-items:center; gap:18px; }
+    .home-partner-track { overflow:hidden; }
+    .home-partner-list { display:flex; gap:16px; transition:transform .45s ease; }
+    .home-partner-item { flex:0 0 calc(20% - 13px); min-height:105px; display:grid; place-items:center; padding:18px; border:1px solid var(--line); color:#718398; text-align:center; font:700 12px 'Manrope'; }
+    .home-partner-control { width:42px; height:42px; display:grid; place-items:center; border:1px solid var(--line); background:#fff; color:var(--blue); cursor:pointer; }
+    .home-partner-control svg { width:18px; fill:none; stroke:currentColor; stroke-width:1.5; }
+    @media(max-width:800px) { .home-additional-section { padding:82px 0; } .home-video-grid,.home-news-layout { grid-template-columns:1fr; gap:42px; } .home-map-panel { min-height:0; } .home-map-stage { max-width:520px; } .home-stats-grid { grid-template-columns:repeat(2,1fr); } .home-partner-item { flex-basis:calc(33.333% - 11px); } .home-video-modal-close { right:8px; top:8px; } }
+    @media(max-width:500px) { .home-additional-section { padding:70px 0; } .home-section-title { margin-bottom:30px; } .home-video-copy { padding-top:8px; } .home-stats-grid { grid-template-columns:1fr; gap:34px; } .home-stat { padding-left:0; } .home-news-heading { display:block; } .home-news-heading span { display:block; margin-top:8px; } .home-news-featured { grid-template-columns:1fr; } .home-news-list { max-height:300px; } .home-partner-shell { grid-template-columns:34px 1fr 34px; gap:8px; } .home-partner-item { flex-basis:calc(50% - 8px); min-height:90px; padding:12px; font-size:10px; } .home-video-play { width:62px; height:62px; } .home-map-marker { width:13px; height:13px; } }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Homepage shared-header refinement; main.js remains the source of navigation behavior. */
+    .header-top-inner { width:100%; height:100%; min-height:36px; display:flex; align-items:center; justify-content:space-between; padding:0 40px; box-sizing:border-box; }
+    .header-top-right { display:flex; align-items:center; justify-content:flex-end; gap:22px; height:100%; white-space:nowrap; flex:0 0 auto; }
+    .header-top-right .phone, .header-top-right .language-switcher { white-space:nowrap; }
+    .header-top-right .language-switcher { display:flex; align-items:center; gap:10px; height:100%; color:#fff; font-weight:600; }
+    .header-top-right .language-switcher a { display:inline-flex; align-items:center; gap:4px; height:100%; color:#fff; line-height:1; white-space:nowrap; }
+    .shared-header.home-header { background:var(--white); color:var(--navy); border-bottom:1px solid #e6eaf0; box-shadow:0 5px 18px rgba(8,26,51,.045); }
+    .shared-header.home-header.is-scrolled { background:rgba(255,255,255,.97); box-shadow:0 8px 24px rgba(8,26,51,.1); }
+    header .brand { color:var(--navy); }
+    header .header-logo { display:block; width:185px; height:auto; object-fit:contain; }
+    .header-inner { width:min(1160px, calc(100% - 48px)); max-width:1160px; margin:0 auto; display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:32px; }
+    header .header-inner.nav { display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:32px; }
+    header .header-inner.nav nav { display:flex; justify-content:center; align-items:center; gap:26px; margin:0; min-width:0; }
+    header .header-inner.nav nav a { white-space:nowrap; color:var(--navy); opacity:.78; }
+    header .header-inner.nav nav a:hover, header .header-inner.nav nav a.active { color:var(--blue); opacity:1; }
+    header .lang-switch { display:none; }
+    header .menu { color:var(--navy); }
+    @media(max-width:800px) { .header-top-inner { padding:0 18px; } .header-top-inner > .company-name { display:none; } .header-inner { width:calc(100% - 36px); grid-template-columns:auto 1fr auto; min-height:72px; gap:18px; } header .header-inner.nav { grid-template-columns:auto 1fr auto; min-height:72px; gap:18px; } header .header-inner.nav nav { display:none; } header .header-inner.nav nav.open { display:flex; } header .header-logo { width:142px; } header .menu { display:block; width:25px; } }
+    @media(max-width:500px) { .header-top-inner { padding:0 18px; } .header-top-right { gap:12px; } .header-top-right .language-switcher { gap:8px; } .header-inner { width:calc(100% - 36px); min-height:68px; gap:12px; } header .header-inner.nav { min-height:68px; gap:12px; } header .header-logo { width:132px; } }
   </style>
 </head>
 <body>
-  <div class="topbar"><div class="container"><span>HUNG VUONG CONSTRUCTION CORPORATION</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg> 028 3822 6868</span></div></div>
-  <header><div class="container nav"><a href="#top" class="brand"><i class="brand-mark"></i><span>HÙNG VƯƠNG<br><small>CONSTRUCTION</small></span></a><nav><a class="active" href="#top">Trang chủ</a><a href="#about">Về chúng tôi</a><a href="#business">Lĩnh vực</a><a href="#projects">Dự án</a><a href="#contact">Liên hệ</a></nav><div class="nav-actions"><span>VI / EN</span><a href="#contact" class="btn">Kết nối với chúng tôi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><button class="menu" aria-label="Mở menu"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div></div></header>
+  <div class="header-top"><div class="header-top-inner"><div class="company-name">HUNG VUONG CONSTRUCTION CORPORATION</div><div class="header-top-right"><span class="phone">028 3822 6868</span><span class="divider">|</span><div class="language-switcher"><a class="active" href="index.html"><span aria-hidden="true">🇻🇳</span> VN</a><span class="separator">|</span><a href="en/index.html">EN <span aria-hidden="true">🇬🇧</span></a></div></div></div></div>
+  <header><div class="header-inner nav"><a href="index.html" class="brand" aria-label="Hùng Vương Construction"><img class="header-logo" src="assets/images/hung-vuong-logo-full.png?v=4" alt="Hùng Vương Construction"></a><nav><a class="active" href="index.html">Trang chủ</a><a href="about.html">Về chúng tôi</a><a href="businesses.html">Lĩnh vực</a><a href="capabilities.html">Năng lực</a><a href="projects.html">Dự án</a><a href="news.html">Tin tức</a><a href="careers.html">Tuyển dụng</a><a href="contact.html">Liên hệ</a></nav><div class="nav-actions"><a href="contact.html" class="btn">Kết nối với chúng tôi</a><button class="menu" aria-label="Mở menu">☰</button></div></div></header>
   <main id="top">
-    <section class="hero"><div class="container"><div class="hero-content"><div class="eyebrow">Kiến tạo nền tảng thịnh vượng</div><h1>Vững nền móng.<br /><em>Bền tương lai.</em></h1><p>Chúng tôi kiến tạo những công trình hạ tầng chất lượng, kết nối cộng đồng và góp phần phát triển Việt Nam bền vững.</p><div class="hero-buttons"><a href="#projects" class="btn">Khám phá dự án <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#about" class="btn ghost">Câu chuyện Hùng Vương</a></div></div></div><div class="hero-bottom"><div class="container"><div class="hero-note"><span style="color:var(--cyan)">●</span> Đồng hành cùng những công trình của thời đại</div><div class="scroll">Cuộn để khám phá</div></div></div></section>
-    <section class="intro" id="about"><div class="container intro-grid"><div class="intro-copy reveal"><div class="eyebrow">Về Hùng Vương</div><h2>Kiến tạo giá trị<br />từ những điều<br /><span style="color:var(--blue)">vững chắc nhất.</span></h2><p>Với nền tảng vững chắc và tư duy đổi mới, Hùng Vương không ngừng nâng cao năng lực để trở thành đối tác tin cậy trong các dự án hạ tầng trọng điểm của đất nước.</p><a href="#contact" class="btn ghost">Tìm hiểu thêm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="intro-image reveal"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85" alt="Kỹ sư tại công trường"/><div class="image-stamp"><strong>28</strong><span>năm kiến tạo<br />và phát triển</span></div></div></div></section>
-    <section class="business" id="business"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Hệ sinh thái</div><h2>Đa lĩnh vực.<br />Một tầm nhìn.</h2></div><p>Từ những tuyến đường huyết mạch đến các khu đô thị hiện đại — chúng tôi kiến tạo hệ sinh thái phát triển toàn diện.</p></div><div class="business-grid"><article class="business-card reveal"><div class="card-icon"><svg viewBox="0 0 48 48"><path d="M6 42V19l18-13 18 13v23M6 42h36M14 42V26h20v16M19 19h10M19 32h10"/></svg></div><h3>Hạ tầng giao thông</h3><p>Đường cao tốc, cầu và các công trình giao thông trọng điểm.</p></article><article class="business-card reveal"><div class="card-icon"><svg viewBox="0 0 48 48"><path d="M6 42h36M10 42V17l14-8 14 8v25M16 42V25h16v17M19 18h10M20 31h8"/></svg></div><h3>Xây dựng dân dụng</h3><p>Không gian sống, làm việc đẳng cấp cho cộng đồng hiện đại.</p></article><article class="business-card reveal"><div class="card-icon"><svg viewBox="0 0 48 48"><path d="M24 43V10M24 16L13 6M24 24l13-11M24 33L11 22M24 10h6M6 43h36"/></svg></div><h3>Năng lượng & môi trường</h3><p>Giải pháp năng lượng sạch và phát triển bền vững.</p></article><article class="business-card reveal"><div class="card-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M24 7v34M7 24h34M12 13c7 5 17 5 24 0M12 35c7-5 17-5 24 0"/></svg></div><h3>Đầu tư & phát triển</h3><p>Kiến tạo những giá trị bền vững cho thế hệ tương lai.</p></article></div></div></section>
-    <section class="stats"><div class="container stats-grid"><div class="stat reveal"><strong>28<span>+</span></strong><p>Năm kinh nghiệm</p></div><div class="stat reveal"><strong>120<span>+</span></strong><p>Dự án hoàn thành</p></div><div class="stat reveal"><strong>18<span>TỶ</span></strong><p>Giá trị tổng mức đầu tư</p></div><div class="stat reveal"><strong>1.500<span>+</span></strong><p>Nhân sự & chuyên gia</p></div></div></section>
-    <section class="projects" id="projects"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Dấu ấn nổi bật</div><h2>Những công trình<br />để đời.</h2></div><a href="#contact" class="btn ghost">Xem tất cả dự án <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="projects-grid"><article class="project reveal"><img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1000&q=85" alt="Cầu vượt đô thị"/><div class="project-copy"><small>Hạ tầng giao thông · 2024</small><h3>Cầu vượt Hùng Vương</h3><p>Khánh thành — TP. Hồ Chí Minh</p></div></article><article class="project reveal"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Tòa nhà văn phòng"/><div class="project-copy"><small>Xây dựng dân dụng · 2023</small><h3>Hùng Vương Tower</h3><p>Đà Nẵng</p></div></article><article class="project reveal"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85" alt="Dự án năng lượng"/><div class="project-copy"><small>Năng lượng xanh · 2022</small><h3>Solar Valley</h3><p>Ninh Thuận</p></div></article></div></div></section>
-    <section class="capability"><div class="container cap-grid"><div class="cap-copy reveal"><div class="eyebrow">Năng lực cốt lõi</div><h2>Chất lượng là<br /><span style="color:var(--blue)">tiêu chuẩn.</span></h2><p>Chúng tôi kết hợp năng lực kỹ thuật, công nghệ tiên tiến và tinh thần trách nhiệm để mang đến những công trình vượt kỳ vọng.</p><a href="#contact" class="btn">Trao đổi cùng chuyên gia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="bars reveal"><div><div class="bar-label">Năng lực thi công <span>95%</span></div><div class="bar-line"><i style="width:95%"></i></div></div><div><div class="bar-label">Quản lý dự án <span>92%</span></div><div class="bar-line"><i style="width:92%"></i></div></div><div><div class="bar-label">Công nghệ & đổi mới <span>88%</span></div><div class="bar-line"><i style="width:88%"></i></div></div><div><div class="bar-label">Phát triển bền vững <span>90%</span></div><div class="bar-line"><i style="width:90%"></i></div></div></div></div></section>
-    <section class="contact" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><div class="eyebrow" style="color:var(--cyan)">Kết nối với Hùng Vương</div><h2>Cùng nhau kiến tạo<br />điều lớn lao.</h2><p>Mọi công trình vĩ đại đều bắt đầu từ một cuộc trò chuyện. Hãy chia sẻ cùng chúng tôi về dự án tiếp theo của bạn.</p><a href="mailto:hello@hungvuong.com.vn" class="btn" style="margin-top:30px">Gửi yêu cầu tư vấn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="contact-info reveal"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><div><small>Văn phòng chính</small><p>268 Nam Kỳ Khởi Nghĩa, Quận 3<br />TP. Hồ Chí Minh, Việt Nam</p></div></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg><div><small>Hotline</small><p>028 3822 6868 · 090 123 4567</p></div></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4z"/><path d="m4 7 8 5 8-5"/></svg><div><small>Email</small><p>hello@hungvuong.com.vn</p></div></div></div></div></section>
+    <section class="home-banner-carousel" aria-label="Thông điệp nổi bật" data-carousel>
+      <div class="home-banner-track">
+        <article class="home-banner-slide is-active" data-slide="0" aria-hidden="false">
+          <div class="home-banner-content"><div class="home-banner-card"><img class="home-banner-logo" src="assets/images/hung-vuong-35-years.png" alt="Logo kỷ niệm 35 năm Hùng Vương"><span class="slide-index">01 / 03</span><h2>35 năm Hùng Vương</h2><p>Kiến tạo những nền tảng vững chắc cho tương lai.</p><a class="banner-link" href="#anniversary-title">Xem hành trình 35 năm <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+        </article>
+        <article class="home-banner-slide" data-slide="1" aria-hidden="true">
+          <div class="home-banner-content"><div class="home-banner-card"><span class="slide-index">02 / 03</span><h2>Tuân thủ – Đoàn kết – Chuyên nghiệp – Phát triển</h2><p>Vững vàng trong từng giá trị, đồng hành cùng những công trình và con người tạo nên tương lai.</p><a class="banner-link" href="about.html">Khám phá Hùng Vương <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+        </article>
+        <article class="home-banner-slide" data-slide="2" aria-hidden="true">
+          <div class="home-banner-content"><div class="home-banner-card"><span class="slide-index">03 / 03</span><h2>Hùng Vương nhận chứng nhận xanh chuẩn Singapore</h2><p>Khẳng định cam kết phát triển bền vững và nâng cao tiêu chuẩn môi trường trong xây dựng.</p><a class="banner-link" href="capabilities.html">Xem chứng nhận <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+        </article>
+      </div>
+      <div class="home-banner-controls"><button class="home-banner-control" type="button" data-carousel-prev aria-label="Slide trước"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><span class="home-banner-count" data-carousel-count>01 / 03</span><button class="home-banner-control" type="button" data-carousel-next aria-label="Slide tiếp theo"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button></div>
+    </section>
+    <section class="home-video-section home-additional-section" aria-labelledby="video-title"><div class="container"><div class="home-section-title"><div class="eyebrow" style="color:var(--cyan)">Hùng Vương Construction</div><h2 id="video-title">VIDEO VỀ HÙNG VƯƠNG CONSTRUCTION</h2></div><div class="home-video-grid"><div><div class="home-video-frame"><img class="home-video-thumbnail" src="https://img.youtube.com/vi/y_qwOUf6MtY/hqdefault.jpg" alt="Thumbnail video giới thiệu Hùng Vương Construction"><button class="home-video-play" type="button" data-video-open aria-label="Phát video giới thiệu Hùng Vương Construction"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></svg></button></div><div class="home-video-copy"><p>Hùng Vương Construction luôn đi đầu trong việc xây dựng và phát triển lĩnh vực sản xuất cấu kiện bê tông đúc sẵn, thi công hạ tầng, khai thác đá/cát tại Việt Nam. Với đội ngũ cán bộ – công nhân viên năng động hơn 1500 người cùng với chiến lược phát triển bền vững, chúng tôi luôn cố gắng hoàn thiện để cung cấp các sản phẩm có chất lượng với giá cả phù hợp đến mọi công trình.</p><p>Đến với Hùng Vương Construction là đến với sự an toàn và bền vững.</p><p class="quote-sign">Trân trọng!</p><div class="signature">Đinh Công Tuấn<span>Chủ tịch HĐTV</span></div><a class="btn" href="about.html">Xem thêm</a></div></div><div class="home-map-panel" aria-label="Bản đồ Việt Nam và các địa điểm Hùng Vương"><div class="home-map-stage"><img class="home-map-graphic" src="assets/images/bandoviet-1.png" alt="Bản đồ Việt Nam và hệ thống địa điểm Hùng Vương"><button class="home-map-marker location-marker" type="button" data-location="ha-tinh" aria-label="Hùng Vương – Hà Tĩnh"></button><button class="home-map-marker location-marker" type="button" data-location="khanh-hoa" aria-label="Khánh Hòa"></button><button class="home-map-marker location-marker" type="button" data-location="binh-phuoc" aria-label="Bình Phước"></button><button class="home-map-marker location-marker" type="button" data-location="phuoc-tan" aria-label="Phước Tân"></button><button class="home-map-marker location-marker" type="button" data-location="ba-ria" aria-label="Bà Rịa – Vũng Tàu"></button></div></div></div></div></section>
+    <div class="home-video-modal" data-video-modal aria-hidden="true"><div class="home-video-modal-dialog" role="dialog" aria-modal="true" aria-label="Video Hùng Vương Construction"><button class="home-video-modal-close" type="button" data-video-close aria-label="Đóng video">×</button><iframe data-video-iframe title="Video Hùng Vương Construction" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+    <section class="home-stats-section home-additional-section" aria-labelledby="highlight-title"><div class="container"><div class="home-section-title"><div class="eyebrow">Năng lực nổi bật</div><h2 id="highlight-title">Những con số tạo nên quy mô.</h2></div><div class="home-stats-grid"><article class="home-stat"><div class="home-stat-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M24 13v11l7 5"/></svg></div><strong>34 năm</strong><p>Kinh nghiệm trong lĩnh vực cấu kiện bê tông đúc sẵn</p></article><article class="home-stat"><div class="home-stat-icon"><svg viewBox="0 0 48 48"><circle cx="18" cy="17" r="6"/><circle cx="32" cy="19" r="5"/><path d="M7 37c1-8 5-12 11-12s10 4 11 12M28 28c7 0 11 3 12 9"/></svg></div><strong>1500+</strong><p>Nhân viên hoạt động đầy nhiệt huyết và trách nhiệm</p></article><article class="home-stat"><div class="home-stat-icon"><svg viewBox="0 0 48 48"><path d="M9 34h30M12 34V18h24v16M18 18v-5h12v5M15 24h18M15 29h18"/></svg></div><strong>209 triệu m³</strong><p>Sản phẩm chất lượng cao được bán tại thị trường Việt Nam</p></article><article class="home-stat"><div class="home-stat-icon"><svg viewBox="0 0 48 48"><path d="M8 39h32M12 39V16l12-7 12 7v23M18 39V25h12v14M19 18h10"/></svg></div><strong>1000+</strong><p>Dự án lớn công ty Hùng Vương đã và đang thực hiện</p></article></div></div></section>
+    <section class="home-news-section home-additional-section" aria-labelledby="news-title"><div class="container"><div class="home-news-layout"><div><div class="home-news-heading"><h3 id="news-title">TIN TỨC NỔI BẬT</h3><span>Cập nhật từ Hùng Vương</span></div><div class="home-news-featured"><article class="home-news-card"><div class="home-news-thumb">Hình ảnh tin tức cần xác nhận</div><div class="home-news-card-body"><span class="home-news-meta">[Ngày đăng cần xác nhận] · [0 bình luận]</span><h4>[Tiêu đề bài viết cần xác nhận]</h4><p>[Tóm tắt bài viết cần xác nhận]</p><a class="home-news-detail" href="news.html">CHI TIẾT →</a></div></article><article class="home-news-card"><div class="home-news-thumb">Hình ảnh tin tức cần xác nhận</div><div class="home-news-card-body"><span class="home-news-meta">[Ngày đăng cần xác nhận] · [0 bình luận]</span><h4>[Tiêu đề bài viết cần xác nhận]</h4><p>[Tóm tắt bài viết cần xác nhận]</p><a class="home-news-detail" href="news.html">CHI TIẾT →</a></div></article><article class="home-news-card"><div class="home-news-thumb">Hình ảnh tin tức cần xác nhận</div><div class="home-news-card-body"><span class="home-news-meta">[Ngày đăng cần xác nhận] · [0 bình luận]</span><h4>[Tiêu đề bài viết cần xác nhận]</h4><p>[Tóm tắt bài viết cần xác nhận]</p><a class="home-news-detail" href="news.html">CHI TIẾT →</a></div></article></div></div><aside><div class="home-news-heading"><h3>TIN TỨC KHÁC</h3></div><div class="home-news-tabs"><button class="home-news-tab is-active" type="button" data-news-tab="construction">Tin công trình</button><button class="home-news-tab" type="button" data-news-tab="community">Tin đoàn thể</button></div><div class="home-news-list" data-news-list="construction"><article><span class="home-news-meta">[Ngày đăng cần xác nhận]</span><h4>[Tin công trình cần xác nhận]</h4><p>[Đoạn trích ngắn cần xác nhận]</p></article><article><span class="home-news-meta">[Ngày đăng cần xác nhận]</span><h4>[Tin công trình cần xác nhận]</h4><p>[Đoạn trích ngắn cần xác nhận]</p></article></div></aside></div></div></section>
+    <section class="home-partners-section home-additional-section" aria-labelledby="partners-title"><div class="container"><div class="home-section-title"><div class="eyebrow">Kết nối đồng hành</div><h2 id="partners-title">ĐỐI TÁC</h2></div><div class="home-partner-shell"><button class="home-partner-control" type="button" data-partner-prev aria-label="Đối tác trước"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><div class="home-partner-track"><div class="home-partner-list" data-partner-list><div class="home-partner-item">[Logo đối tác cần cung cấp]</div><div class="home-partner-item">[Logo đối tác cần cung cấp]</div><div class="home-partner-item">[Logo đối tác cần cung cấp]</div><div class="home-partner-item">[Logo đối tác cần cung cấp]</div><div class="home-partner-item">[Logo đối tác cần cung cấp]</div><div class="home-partner-item">[Logo đối tác cần cung cấp]</div></div></div><button class="home-partner-control" type="button" data-partner-next aria-label="Đối tác tiếp theo"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button></div></div></section>
+    <section class="anniversary" aria-labelledby="anniversary-title"><div class="container anniversary-grid"><div class="anniversary-mark reveal"><img src="assets/images/hung-vuong-35-years.png" alt="Logo kỷ niệm 35 năm Hùng Vương, 1992 - 2027"></div><div class="anniversary-copy reveal"><div class="eyebrow">Một hành trình bền vững</div><h2 id="anniversary-title">Từ nền móng hôm qua<br>đến tầm nhìn ngày mai.</h2><p>Hành trình 35 năm của Hùng Vương được đánh dấu bằng tinh thần bền bỉ, năng lực liên tục phát triển và những nền tảng vững chắc cho tương lai.</p><div class="anniversary-line"><span>1992</span><i></i><span>2027</span></div></div></div></section>
+    <section class="intro" id="about"><div class="container intro-grid"><div class="intro-copy reveal"><div class="eyebrow">Về Hùng Vương</div><h2>Kiến tạo giá trị<br>từ những điều<br><span style="color:var(--blue)">vững chắc nhất.</span></h2><p>Với nền tảng vững chắc và tư duy đổi mới, Hùng Vương không ngừng nâng cao năng lực để trở thành đối tác tin cậy trong các dự án hạ tầng trọng điểm của đất nước.</p><a href="about.html" class="btn ghost">Tìm hiểu thêm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="intro-image reveal"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85" alt="Hình ảnh minh họa công trường xây dựng"><div class="image-stamp"><strong>[Cần xác nhận]</strong><span>Số năm hoạt động<br>chính thức</span></div></div></div></section>
+    <section class="business" id="business"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Hệ sinh thái</div><h2>Đa lĩnh vực.<br>Một tầm nhìn.</h2></div><p>Hùng Vương phát triển năng lực xuyên suốt chuỗi giá trị xây dựng, từ sản xuất cấu kiện và vật liệu đến thi công các công trình hạ tầng.</p></div><div class="business-grid"><a class="business-card reveal" href="businesses.html#precast"><span class="business-index">01 / 04</span><div class="card-icon"><svg viewBox="0 0 48 48"><path d="M6 42V19l18-13 18 13v23M6 42h36M14 42V26h20v16M19 19h10M19 32h10"/></svg></div><h3>Cấu kiện bê tông đúc sẵn</h3><p>Ống cống, cống hộp, cống kích ngầm, cọc và các sản phẩm cấu kiện khác.</p></a><a class="business-card reveal" href="businesses.html#construction"><span class="business-index">02 / 04</span><div class="card-icon"><svg viewBox="0 0 48 48"><path d="M6 42h36M10 42V17l14-8 14 8v25M16 42V25h16v17M19 18h10M20 31h8"/></svg></div><h3>Thi công công trình</h3><p>Thi công xây dựng hạ tầng và thi công ép cọc.</p></a><a class="business-card reveal" href="businesses.html#quarries"><span class="business-index">03 / 04</span><div class="card-icon"><svg viewBox="0 0 48 48"><path d="M24 43V10M24 16L13 6M24 24l13-11M24 33L11 22M24 10h6M6 43h36"/></svg></div><h3>Mỏ đá</h3><p>Các mỏ đá trong hệ thống hoạt động của Hùng Vương.</p></a><a class="business-card reveal" href="businesses.html#materials"><span class="business-index">04 / 04</span><div class="card-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M24 7v34M7 24h34M12 13c7 5 17 5 24 0M12 35c7-5 17-5 24 0"/></svg></div><h3>Vật liệu xây dựng</h3><p>Cát nghiền, UHPC, sản phẩm cơ khí, bê tông tươi và các sản phẩm liên quan.</p></a></div></div></section>
+    <section class="stats"><div class="container stats-grid"><div class="stat reveal"><strong>[Cần xác nhận]</strong><p>Năm kinh nghiệm</p></div><div class="stat reveal"><strong>[Cần xác nhận]</strong><p>Dự án hoàn thành</p></div><div class="stat reveal"><strong>[Cần xác nhận]</strong><p>Giá trị tổng mức đầu tư</p></div><div class="stat reveal"><strong>[Cần xác nhận]</strong><p>Nhân sự & chuyên gia</p></div></div></section>
+    <section class="projects" id="projects"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Dấu ấn nổi bật</div><h2>Những công trình<br>để đời.</h2></div><a href="projects.html" class="btn ghost">Xem tất cả dự án <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="projects-grid"><article class="project reveal"><img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1000&q=85" alt="Hình ảnh minh họa công trình hạ tầng"><div class="project-copy"><small>Hạ tầng giao thông · [Cần xác nhận]</small><h3>[Tên dự án cần xác nhận]</h3><p>[Địa điểm và trạng thái cần xác nhận]</p></div></article><article class="project reveal"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Hình ảnh minh họa công trình dân dụng"><div class="project-copy"><small>Xây dựng dân dụng · [Cần xác nhận]</small><h3>[Tên dự án cần xác nhận]</h3><p>[Địa điểm và trạng thái cần xác nhận]</p></div></article><article class="project reveal"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85" alt="Hình ảnh minh họa dự án năng lượng"><div class="project-copy"><small>Năng lượng & môi trường · [Cần xác nhận]</small><h3>[Tên dự án cần xác nhận]</h3><p>[Địa điểm và trạng thái cần xác nhận]</p></div></article></div></div></section>
+    <section class="capability"><div class="container cap-grid"><div class="cap-copy reveal"><div class="eyebrow">Năng lực cốt lõi</div><h2>35 năm kiến tạo<br><span style="color:var(--blue)">những nền tảng cho tương lai.</span></h2><p>Chúng tôi kết hợp năng lực kỹ thuật, công nghệ tiên tiến và tinh thần trách nhiệm để mang đến những công trình vượt kỳ vọng.</p><a href="capabilities.html" class="btn">Xem năng lực <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="bars reveal"><div><div class="bar-label">Năng lực sản xuất <span>[Cần xác nhận]</span></div><div class="bar-line"><i style="width:0"></i></div></div><div><div class="bar-label">Thiết bị & nhân sự <span>[Cần xác nhận]</span></div><div class="bar-line"><i style="width:0"></i></div></div><div><div class="bar-label">Quản lý chất lượng <span>[Cần xác nhận]</span></div><div class="bar-line"><i style="width:0"></i></div></div><div><div class="bar-label">Phát triển bền vững <span>[Cần xác nhận]</span></div><div class="bar-line"><i style="width:0"></i></div></div></div></div></section>
+    <section class="contact" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><div class="eyebrow" style="color:var(--cyan)">Kết nối với Hùng Vương</div><h2>Cùng nhau kiến tạo<br>điều lớn lao.</h2><p>Mọi công trình vĩ đại đều bắt đầu từ một cuộc trò chuyện. Hãy chia sẻ cùng chúng tôi về dự án tiếp theo của bạn.</p><a href="mailto:hello@hungvuong.com.vn" class="btn" style="margin-top:30px">Gửi yêu cầu tư vấn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="contact-info reveal"><div><small>Văn phòng chính</small><p>268 Nam Kỳ Khởi Nghĩa, Quận 3<br>TP. Hồ Chí Minh, Việt Nam</p></div><div><small>Hotline</small><p>028 3822 6868 · 090 123 4567</p></div><div><small>Email</small><p>hello@hungvuong.com.vn</p></div></div></div></section>
   </main>
   <footer><div class="container"><a class="brand" href="#top"><i class="brand-mark"></i><span>HÙNG VƯƠNG</span></a><span>© 2024 Hùng Vương Construction Corporation. All rights reserved.</span></div></footer>
-  <script>
-    const observer = new IntersectionObserver((entries) => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    const menu = document.querySelector('.menu'); const nav = document.querySelector('nav');
-    menu?.addEventListener('click', () => { nav.classList.toggle('open'); });
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
+<script>(()=>{const apply=()=>{const header=document.querySelector('.shared-header');if(!header)return;header.querySelector('.lang-switch')?.remove()};apply();const header=document.querySelector('.shared-header');if(header)new MutationObserver(apply).observe(header,{childList:true,subtree:true})})();</script>
+<script>if (typeof renderChat === 'function' && !document.querySelector('.chat-launcher')) renderChat();</script>
+<script>(()=>{const sync=()=>{const launcher=document.querySelector('.chat-launcher');const widget=document.querySelector('.chat-widget');if(!launcher||!widget)return; if(widget.classList.contains('open')) launcher.style.zIndex='39'; else launcher.style.removeProperty('z-index')};const widget=document.querySelector('.chat-widget');if(widget){new MutationObserver(sync).observe(widget,{attributes:true,attributeFilter:['class']});sync()}})();</script>
+<script>(()=>{const carousel=document.querySelector('[data-carousel]');if(!carousel)return;const slides=[...carousel.querySelectorAll('[data-slide]')];const count=carousel.querySelector('[data-carousel-count]');let index=0;let timer;const show=next=>{index=(next+slides.length)%slides.length;slides.forEach((slide,i)=>{const active=i===index;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',String(!active))});if(count)count.textContent=`0${index+1} / 03`};const restart=()=>{clearInterval(timer);timer=setInterval(()=>show(index+1),5600)};carousel.querySelector('[data-carousel-prev]')?.addEventListener('click',()=>{show(index-1);restart()});carousel.querySelector('[data-carousel-next]')?.addEventListener('click',()=>{show(index+1);restart()});carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',restart);carousel.addEventListener('focusin',()=>clearInterval(timer));carousel.addEventListener('focusout',restart);restart()})();</script>
+<script>(()=>{const tabs=[...document.querySelectorAll('[data-news-tab]')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(item=>item.classList.toggle('is-active',item===tab));const list=document.querySelector('[data-news-list]');if(list)list.innerHTML='<article><span class="home-news-meta">[Ngày đăng cần xác nhận]</span><h4>['+(tab.dataset.newsTab==='community'?'Tin đoàn thể':'Tin công trình')+' cần xác nhận]</h4><p>[Đoạn trích ngắn cần xác nhận]</p></article><article><span class="home-news-meta">[Ngày đăng cần xác nhận]</span><h4>['+(tab.dataset.newsTab==='community'?'Tin đoàn thể':'Tin công trình')+' cần xác nhận]</h4><p>[Đoạn trích ngắn cần xác nhận]</p></article>'}))})();</script>
+<script>(()=>{const modal=document.querySelector('[data-video-modal]');const open=document.querySelector('[data-video-open]');const close=modal?.querySelector('[data-video-close]');const frame=modal?.querySelector('[data-video-iframe]');if(!modal||!open||!close||!frame)return;const source='https://www.youtube.com/embed/y_qwOUf6MtY?autoplay=1&rel=0';const hide=()=>{modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');frame.src='';document.body.style.removeProperty('overflow')};open.addEventListener('click',()=>{frame.src=source;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus()});close.addEventListener('click',hide);modal.addEventListener('click',event=>{if(event.target===modal)hide()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-open'))hide()})})();</script>
+<script>(()=>{document.querySelectorAll('.home-map-marker').forEach(marker=>marker.addEventListener('click',()=>{document.querySelectorAll('.home-map-marker').forEach(item=>{if(item!==marker)item.classList.remove('is-selected')});marker.classList.toggle('is-selected')}))})();</script>
+<script>(()=>{const list=document.querySelector('[data-partner-list]');if(!list)return;let index=0;const visible=()=>innerWidth<=500?2:innerWidth<=800?3:5;const move=step=>{const items=[...list.children];const max=Math.max(0,items.length-visible());index=Math.max(0,Math.min(index+step,max));list.style.transform=`translateX(-${index*(100/visible())}%)`};document.querySelector('[data-partner-prev]')?.addEventListener('click',()=>move(-1));document.querySelector('[data-partner-next]')?.addEventListener('click',()=>move(1));setInterval(()=>{index=0;move(1)},6000);addEventListener('resize',()=>{index=0;move(0)})})();</script>

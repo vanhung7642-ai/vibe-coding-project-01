@@ -1,0 +1,9 @@
+﻿{
+  "name": "local-plugins",
+  "plugins": [
+    {
+      "name": "superpowers",
+      "source": {
+        "path": "../../superpowers"
+  ]
+}
